@@ -7,8 +7,7 @@ $escolhido = [];
 $escolhido = array_filter($itens, function($item) use ($categoriaSelecionada) {
     return !$categoriaSelecionada 
         || $categoriaSelecionada === 'Todas' 
-        || $item['modalidade'] === $categoriaSelecionada;
-        }
+        || $item['modalidade'] === $categoriaSelecionada;}
 );
 ?>
 
@@ -26,7 +25,6 @@ $escolhido = array_filter($itens, function($item) use ($categoriaSelecionada) {
             <th>Modalidades</th>
             <th>Valor da mensalidade</th>
             <th>Vagas na turma</th>
-            <th>Número de meses</th>
             <th>Ação</th>
         </tr>
 
@@ -36,7 +34,7 @@ $escolhido = array_filter($itens, function($item) use ($categoriaSelecionada) {
             <th><?= $item["modalidade"] ?></th>
             <th>R$ <?= number_format($item["mensalidade"], 2, '.', ',')?></th>
             <th><?= $item["vagas_turma"] ?></th>
-            <th><?= $item["numero_meses"]?></th>
+            //<th><?= $item["numero_meses"]?></th>
             <th><a href="detalhes.php?id=<?= $item['id'] ?>">Detalhes</a></th>
         </tr>
         <?php endforeach; ?>
