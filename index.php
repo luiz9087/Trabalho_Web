@@ -3,11 +3,13 @@ require 'dados.php';
 
 $categoriaSelecionada = $_GET['categoria'] ?? null;
 $escolhido = [];
-foreach($itens as $item){
-    if (!$categoriaSelecionada || $categoriaSelecionada == "Todas" || $item["modalidade"] == $categoriaSelecionada){
-        $escolhido[] = $item;
-    }
-}
+
+$escolhido = array_filter($itens, function($item) use ($categoriaSelecionada) {
+    return !$categoriaSelecionada 
+        || $categoriaSelecionada === 'Todas' 
+        || $item['modalidade'] === $categoriaSelecionada;
+        }
+);
 ?>
 
 <a href="index.php?categoria=Todas">Todas</a>
