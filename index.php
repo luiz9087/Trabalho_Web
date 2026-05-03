@@ -34,7 +34,6 @@ $escolhido = array_filter($itens, function($item) use ($categoriaSelecionada) {
             <th><?= $item["modalidade"] ?></th>
             <th>R$ <?= number_format($item["mensalidade"], 2, '.', ',')?></th>
             <th><?= $item["vagas_turma"] ?></th>
-            //<th><?= $item["numero_meses"]?></th>
             <th><a href="detalhes.php?id=<?= $item['id'] ?>">Detalhes</a></th>
         </tr>
         <?php endforeach; ?>
