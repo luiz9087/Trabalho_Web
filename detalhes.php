@@ -22,7 +22,7 @@ foreach ($itens as $item) {
         <label>Nome Completo</label><br>
         <input type="text" name="nome"><br><br>
         <input type="hidden" name="id" value="<?= $itemSelecionado['id'] ?>">
-        <label>Número de meses</label><br>
+        <label>Número de meses da assinatura</label><br>
         <input type="number" name="meses" min="1"><br><br>
         <button type="submit">Confirmar Pedido</button>
     </form>
