@@ -1,5 +1,6 @@
 <?php
 require 'dados.php';
+include 'header.php';
 ?>
 
 <!DOCTYPE html>
@@ -86,3 +87,4 @@ require 'dados.php';
 
 </body>
 </html>
+<?php include 'footer.php'; ?>

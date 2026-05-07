@@ -1,5 +1,6 @@
 <?php
 require 'dados.php';
+include 'header.php';
 
 $id_ = $_GET['id'] ?? null;
 $itemSelecionado = null;
@@ -24,47 +25,48 @@ foreach ($itens as $item) {
 
     <div class="container py-5">
 
-        <?php if ($itemSelecionado): ?>
+            <?php if ($itemSelecionado): ?>
 
-            <div class="card shadow mx-auto py-3" style="max-width: 600px">
-                <div class="card-body">
-                    <h2 class="fw-bold text-primary mb-3">
-                        <?= htmlspecialchars($itemSelecionado['nome']) ?>
-                    </h2>
+                <div class="card shadow mx-auto py-3" style="max-width: 600px">
+                    <div class="card-body">
+                        <h2 class="fw-bold text-primary mb-3">
+                            <?= htmlspecialchars($itemSelecionado['nome']) ?>
+                        </h2>
 
-                    <p><strong>Modalidade:</strong> <?= htmlspecialchars($itemSelecionado['modalidade']) ?></p>
-                    <p><strong>Mensalidade:</strong> R$ <?= number_format($itemSelecionado["mensalidade"], 2, ',', '.') ?></p>
+                        <p><strong>Modalidade:</strong> <?= htmlspecialchars($itemSelecionado['modalidade']) ?></p>
+                        <p><strong>Mensalidade:</strong> R$ <?= number_format($itemSelecionado["mensalidade"], 2, ',', '.') ?></p>
 
-                    <hr>
+                        <hr>
 
-                    <form action="resultado.php" method="POST">
-                        <div class="mb-3">
-                            <label class="form-label">Nome Completo</label>
-                            <input type="text" name="nome" class="form-control">
-                        </div>
+                        <form action="resultado.php" method="POST">
+                            <div class="mb-3">
+                                <label class="form-label">Nome Completo</label>
+                                <input type="text" name="nome" class="form-control">
+                            </div>
 
-                        <input type="hidden" name="id" value="<?= $itemSelecionado['id'] ?>">
+                            <input type="hidden" name="id" value="<?= $itemSelecionado['id'] ?>">
 
-                        <div class="mb-3">
-                            <label class="form-label">Número de meses da assinatura</label>
-                            <input type="number" name="meses" min="1" class="form-control">
-                        </div>
+                            <div class="mb-3">
+                                <label class="form-label">Número de meses da assinatura</label>
+                                <input type="number" name="meses" min="1" class="form-control">
+                            </div>
 
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-success">
-                                Confirmar Pedido
-                            </button>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-success">
+                                    Confirmar Pedido
+                                </button>
 
-                            <a href="index.php" class="btn btn-outline-secondary">
-                                Voltar
-                            </a>
-                        </div>
-                    </form>
+                                <a href="index.php" class="btn btn-outline-secondary">
+                                    Voltar
+                                </a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
 
-        <?php endif; ?>
+            <?php endif; ?>
 
     </div>
 </body>
 </html>
+<?php include 'footer.php'; ?>
