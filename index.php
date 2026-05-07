@@ -11,7 +11,7 @@ $escolhido = array_filter($itens, function($item) use ($categoriaSelecionada) {
 
 <div class="container py-5">
     <div class="text-center mb-4">
-        <h1 class="fw-bold text-primary">Academia Fit</h1>
+        <h1 class="fw-bold text-primary">My Fitness Hub</h1>
         <p class="text-muted">Escolha sua modalidade favorita</p>
     </div>
 
